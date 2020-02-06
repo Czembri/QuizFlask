@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Python QUIZ</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<div class="body-head">
+			<header>
+				<a href="{{ url_for('index') }}">
+					<h1>Python QUIZ</h1>
+				</a>
+			</header>
+			<div style="display: flex">
+				<img src="static/img/logo.svg" alt="quiz" style="margin: auto;" />
+			</div>
+		</div>
+		<div class="hand-writer">
+			<p>
+			  <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome, to my WebApp.",
+			  			"As you can see I am doing my best...", "Enjoy your time here.", "Do not make a mess, please.",
+			  			"I am obsessed with cleaning." ]'>
+				<span class="wrap"></span>
+			  </a>
+			</p>
+		</div>
+		<div class="message">
+			 <p>
+		      {% for message in get_flashed_messages() %}
+		        {{ message }}
+		      {% endfor %}
+		    </p>
+	    </div>
+		<form class="questions" method="POST">
+	        {% for q in questions %}
+			 <div class="pad-questions">
+				 <p>
+					<strong>{{ q.question }}</strong>
+					<br>
+					{% set pnr = loop.index0 %}
+					{% for a in q.pos_answers %}
+					  <label>
+						<input type="radio" value="{{ a }}" name="{{ pnr }}">
+						{{ a }}
+					  </label>
+					  <br>
+					{% endfor %}
+				  </p>
+			 </div>
+	        {% endfor %}
+			 <div class="btn">
+				<button type="submit">Check</button>
+			 </div>
+	    </form>
+	    <div class="note">
+			<img src="static/img/des.svg" alt="It's me"/>
+    	</div>
+		<div class="content-form">
+			<div class="form-style-6">
+				<h1>Contact Me</h1>
+					<form action="submit_form" method="post">
+						<input type="text" name="field1" placeholder="Your Name" />
+						<input type="email" name="field2" placeholder="Email Address" />
+						<textarea name="field3" placeholder="Type your Message"></textarea>
+						<input type="submit" value="Send" />
+					</form>
+			</div>
+		</div>
+		<footer>
+			By Aleksandra Czembrowska e-mail: czembri@gmail.com
+		</footer>
+		</div>
+
+	<script src="static/script.js"></script>
+</body>
+</html>
