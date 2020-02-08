@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Python QUIZ</title>
+    {% block newsheet %}
+    {% endblock %}
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<div class="body-head">
+            <div class="general-menu">
+                <header>
+                    <a href="{{ url_for('index') }}">
+                        <h1>Python QUIZ</h1>
+                    </a>
+                </header>
+                <nav>
+                <ul class="menu">
+                    <li class="item"><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li class="item"><a href="{{ url_for('user') }}">WeatherAPP</a></li>
+                    <li class="item"><a href="https://github.com/Czembri">Github</a></li>
+                </ul>
+            </nav>
+            </div>
+			<div style="display: flex">
+				<img src="static/img/logo.svg" alt="quiz" style="margin: auto;" />
+			</div>
+		</div>
+        {% block name %}
+        {% endblock %}
+        {% block hand_writer %}
+        {% endblock %}
+        {% block questions %}
+        {% endblock %}
+        {% block quote %}
+        {% endblock %}
+        {% block message %}
+        {% endblock %}
+		<footer>
+			By Aleksandra Czembrowska e-mail: czembri@gmail.com
+		</footer>
+		</div>
+	<script src="static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block name %}
+<div class="weather-input">
+    <form method="post">
+        <input class="input" name="city" type="text" placeholder="City Name">
+        <button class="btn-wth">
+            Add City
+        </button>
+    </form>
+</div>
+{% for weather in weather_data %}
+<article class="media">
+    <div class="img-container">
+        <div class="media-left">
+            <figure class="image is-50x50">
+                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+            </figure>
+        </div>
+         <div class="media-content">
+            <div class="content">
+                <p>
+                    <span class="title">{{ weather.city }}</span>
+                    <br>
+                    <span class="subtitle">{{ weather.temperature }}° F</span>
+                    <br> {{ weather.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+    {% endfor %}
+{% endblock %}

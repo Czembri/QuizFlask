@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-	background-color: #66ff99;
+	background-color: #2A9B65;
     font-family: 'Roboto Mono', monospace;
     margin: none;
 
@@ -61,6 +61,7 @@ footer {
     padding-top: 30px;
 	text-align: center;
 	font-size: 12px;
+	width: 100%;
 }
 
 .questions {
@@ -182,4 +183,143 @@ button:hover {
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover{
 	background: #2EBC99;
+}
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: sans-serif;
+}
+nav {
+    background: #222;
+    padding: 5px 20px;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.logo a:hover {
+    text-decoration: none;
+}
+.menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+.logo a,
+.toggle a {
+    font-size: 20px;
+}
+.button.secondary {
+    border-bottom: 1px #444 solid;
+}
+/* Desktop menu */
+@media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+}
+
+.username-auth {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.username {
+    color: black;
+    min-width: 300px;
+    min-height: 50px;
+    font-size: 20px;
+    border: 4px solid #5a67d8;
+    padding-left: 5px;
+}
+
+.weather-input {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+article {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    max-width: 600px;
+    background-color: #FFFF;
+    border: 4px solid #5a67d8;
+}
+
+.is-50x50 {
+    width: 50px;
+    height: 50px;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+.title {
+    color: black;
+}
+
+.subtitle {
+    color: black;
+}
+
+.btn-wth {
+    width: 150px;
+    height: 50px;
+    font-size: 14px;
+}
+
+.input {
+    width: 200px;
+    height: 60px;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+input:focus {
+    background-color: #5a67d8;
+    border: 4px solid #FFFF;
 }

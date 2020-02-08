@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block questions %}
+<div class="message">
+     <p>
+      {% for message in get_flashed_messages() %}
+        {{ message }}
+      {% endfor %}
+    </p>
+</div>
+<form class="questions" method="POST">
+    {% for q in questions %}
+     <div class="pad-questions">
+         <p>
+             <br>
+            <strong>{{ q.question }}</strong>
+            <br>
+             <br>
+            {% set pnr = loop.index0 %}
+            {% for a in q.pos_answers %}
+              <label>
+                <input type="radio" value="{{ a }}" name="{{ pnr }}">
+                {{ a }}
+              </label>
+              <br>
+            {% endfor %}
+          </p>
+     </div>
+    {% endfor %}
+     <div class="btn">
+        <button type="submit">Check</button>
+     </div>
+</form>
+{% endblock %}
